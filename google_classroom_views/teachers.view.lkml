@@ -1,5 +1,5 @@
 view: teachers {
-  sql_table_name: (select userId, max(courseId) as courseId from `looker-private-demo.classroom_staging.teachers` group by 1 )
+  sql_table_name: (select userId, max(courseId) as courseId from `edp-dwh.classroom_staging.teachers` group by 1 )
     ;;
 
   dimension: course_id {

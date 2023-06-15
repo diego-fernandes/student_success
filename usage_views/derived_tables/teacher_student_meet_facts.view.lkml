@@ -25,7 +25,7 @@ view: teacher_student_meet_facts {
           (SELECT
             meet_events.meeting_code  AS meet_events_meeting_code,
             teachers.userId  AS teacher_id
-          FROM `looker-private-demo.classroom_staging.meet_activities`
+          FROM `edp-dwh.classroom_staging.meet_activities`
                AS meet_activities
           LEFT JOIN ${meet_events.SQL_TABLE_NAME}  AS meet_events ON meet_activities.id.uniqueQualifier= meet_events.id
           FULL OUTER JOIN ${user_profiles.SQL_TABLE_NAME}

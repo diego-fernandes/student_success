@@ -1,5 +1,5 @@
 view: meet_activities {
-  sql_table_name: `looker-private-demo.classroom_staging.meet_activities`
+  sql_table_name: `edp-dwh.classroom_staging.meet_activities`
     ;;
   drill_fields: [id]
 
@@ -69,7 +69,7 @@ view: meet_events {
         m4.intValue as video_duration,
         m6.intValue as audio_duration,
         m8.intValue as meeting_code,
-        FROM `looker-private-demo.classroom_staging.meet_activities` as m
+        FROM `edp-dwh.classroom_staging.meet_activities` as m
         left join unnest(m.events) AS m1
         left join unnest(m1.parameters) as m2
 

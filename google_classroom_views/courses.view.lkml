@@ -1,5 +1,5 @@
 view: courses {
-  sql_table_name: `looker-private-demo.classroom_staging.courses`
+  sql_table_name: `edp-dwh.classroom_staging.courses`
     ;;
   drill_fields: [id]
 

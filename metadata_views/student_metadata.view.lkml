@@ -1,6 +1,6 @@
 view: student_metadata {
   view_label: "Students"
-  sql_table_name: `looker-private-demo.classroom_staging.student_metadata`
+  sql_table_name: `edp-dwh.classroom_staging.student_metadata`
     ;;
 
   dimension: grade {

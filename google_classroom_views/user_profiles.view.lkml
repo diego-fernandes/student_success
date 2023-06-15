@@ -1,5 +1,5 @@
 view: user_profiles {
-  sql_table_name: `looker-private-demo.classroom_staging.user_profiles`
+  sql_table_name: `edp-dwh.classroom_staging.user_profiles`
     ;;
   drill_fields: [id]
 

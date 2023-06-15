@@ -1,5 +1,5 @@
 view: coursework_submissions {
-  sql_table_name: `looker-private-demo.classroom_staging.coursework_submissions`;;
+  sql_table_name: `edp-dwh.classroom_staging.coursework_submissions`;;
 
   drill_fields: [id,creation_time,student_profiles.name,average_days_to_submit, average_grade_percent]
 

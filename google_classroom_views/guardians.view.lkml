@@ -1,5 +1,5 @@
 view: guardians {
-  sql_table_name: `looker-private-demo.classroom_staging.guardians`
+  sql_table_name: `edp-dwh.classroom_staging.guardians`
     ;;
   drill_fields: [guardian_id]
 

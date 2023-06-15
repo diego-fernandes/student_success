@@ -1,6 +1,6 @@
 view: topics {
   view_label: "Coursework"
-  sql_table_name: `looker-private-demo.classroom_staging.topics`
+  sql_table_name: `edp-dwh.classroom_staging.topics`
     ;;
   drill_fields: [topic_id]
 

@@ -1,5 +1,5 @@
 view: coursework {
-  sql_table_name: `looker-private-demo.classroom_staging.coursework`
+  sql_table_name: `edp-dwh.classroom_staging.coursework`
     ;;
    drill_fields: [id, teacher_profiles.name, courses.name, courses.id, title, created_date, work_type, coursework_submissions.count, coursework_materials.count, coursework_submissions.average_grade_percent]
 

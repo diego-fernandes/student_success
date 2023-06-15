@@ -46,7 +46,7 @@ view: teacher_meet_facts {
     group_label: "Meet Utilization"
     description: "Total number of meets divided by the number of courses that the teacher instructs"
     type: number
-    sql: ${number_meets}/(select count(distinct id) from  `looker-private-demo.classroom_staging.courses`
+    sql: ${number_meets}/(select count(distinct id) from  `edp-dwh.classroom_staging.courses`
     where ownerId = ${user_id}) ;;
   }
 

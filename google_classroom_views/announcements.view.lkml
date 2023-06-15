@@ -1,5 +1,5 @@
 view: announcements {
-  sql_table_name: `looker-private-demo.classroom_staging.announcements`
+  sql_table_name: `edp-dwh.classroom_staging.announcements`
     ;;
   drill_fields: [id]
 

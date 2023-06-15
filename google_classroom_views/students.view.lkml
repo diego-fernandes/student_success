@@ -1,7 +1,7 @@
 view: students {
   drill_fields: [student_profiles.name,student_metadata.grade, course_id,student_profiles.email_address,guardian_profiles.email_address
     ]
-  sql_table_name: `looker-private-demo.classroom_staging.students`
+  sql_table_name: `edp-dwh.classroom_staging.students`
     ;;
 
   dimension: pk {

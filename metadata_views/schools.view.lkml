@@ -1,5 +1,5 @@
 view: schools {
-  sql_table_name: `looker-private-demo.classroom_staging.schools`
+  sql_table_name: `edp-dwh.classroom_staging.schools`
     ;;
 
   parameter: school_comparitor {

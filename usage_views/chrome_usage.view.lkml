@@ -17,12 +17,12 @@ view: chrome_usage {
         , CASE WHEN duration IS NULL
             THEN 0
             ELSE duration END as duration
-      FROM looker-private-demo.classroom_staging.user_profiles u
-        CROSS JOIN UNNEST(generate_date_array( (SELECT CAST(TIMESTAMP(MIN(date)) AS date)  FROM looker-private-demo.classroom_staging.chrome_usage), (SELECT CAST(TIMESTAMP(MAX(date)) AS date ) FROM looker-private-demo.classroom_staging.chrome_usage) , interval 1 day )) AS date
-        LEFT JOIN looker-private-demo.classroom_staging.chrome_usage c
+      FROM edp-dwh.classroom_staging.user_profiles u
+        CROSS JOIN UNNEST(generate_date_array( (SELECT CAST(TIMESTAMP(MIN(date)) AS date)  FROM edp-dwh.classroom_staging.chrome_usage), (SELECT CAST(TIMESTAMP(MAX(date)) AS date ) FROM edp-dwh.classroom_staging.chrome_usage) , interval 1 day )) AS date
+        LEFT JOIN edp-dwh.classroom_staging.chrome_usage c
           ON u.emailaddress = c.user
           AND date = CAST(TIMESTAMP(c.date) as date)
-     WHERE u.id in (SELECT distinct userId FROM looker-private-demo.classroom_staging.students) OR u.id in (SELECT distinct userId FROM looker-private-demo.classroom_staging.teachers)
+     WHERE u.id in (SELECT distinct userId FROM edp-dwh.classroom_staging.students) OR u.id in (SELECT distinct userId FROM edp-dwh.classroom_staging.teachers)
 
 
       ;;
