@@ -254,7 +254,7 @@ FROM
 
   measure: total_students {
     hidden: yes
-    type: count
+    type: count_distinct
     sql: ${predicted_grade} ;;
   }
 

@@ -1,4 +1,4 @@
-connection: "looker-private-demo"
+connection: "edp-dwh"
 
 include: "/google_classroom_views/*.view.lkml"
 include: "/google_classroom_views/derived_tables/*.view.lkml"
@@ -91,35 +91,43 @@ explore: courses {
   join: coursework_materials {
     view_label: "Coursework"
     from: materials
+    relationship: many_to_one
     sql:LEFT JOIN UNNEST(JSON_EXTRACT_ARRAY(${coursework.materials})) as coursework_materials ;;
   }
   join: announcement_materials {
     view_label: "Announcements"
     from: materials
+    relationship: many_to_one
     sql: LEFT JOIN UNNEST(JSON_EXTRACT_ARRAY(${announcements.materials})) as announcement_materials ;;
   }
   join: student_chrome_facts {
     view_label: "Students"
+    relationship: many_to_one
     sql_on: ${student_chrome_facts.user_id}=${students.user_id} ;;
   }
   join: teacher_chrome_facts {
     view_label: "Teachers"
+    relationship: many_to_one
     sql_on: ${teacher_chrome_facts.user_id}=${teachers.user_id} ;;
   }
   join: student_meet_facts {
     view_label: "Students"
+    relationship: many_to_one
     sql_on: ${student_meet_facts.user_id}=${students.user_id} ;;
   }
   join: teacher_meet_facts {
     view_label: "Teachers"
+    relationship: many_to_one
     sql_on: ${teacher_meet_facts.user_id}=${teachers.user_id} ;;
   }
   join: student_attendance_facts {
     view_label: "Students"
+    relationship: many_to_one
     sql_on: ${student_attendance_facts.student_id}=${students.user_id} ;;
   }
   join: topics {
     view_label: "Courses"
+    relationship: many_to_one
     sql_on: ${topics.topic_id}=${coursework.topic_id} ;;
   }
 }
@@ -175,6 +183,7 @@ explore: meet_activities {
   }
   join: student_attendance_facts {
     view_label: "Students"
+    relationship: many_to_one
     sql_on: ${student_attendance_facts.student_id}=${students.user_id} ;;
   }
 }
@@ -209,6 +218,7 @@ explore: chrome_usage {
   }
   join: student_attendance_facts {
     view_label: "Students"
+    relationship: many_to_one
     sql_on: ${student_attendance_facts.student_id}=${students.user_id} ;;
   }
   join: teacher_profiles {
